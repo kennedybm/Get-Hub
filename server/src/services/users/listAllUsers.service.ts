@@ -7,6 +7,7 @@ export const listAllUsersService = async (userId: string) => {
   try {
     const retrievedData = await octokit.request("GET /users{?since}", {
       since: parsedId,
+      per_page: 100,
       headers: {
         "X-GitHub-Api-Version": "2022-11-28",
       },
