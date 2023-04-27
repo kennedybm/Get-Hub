@@ -1,5 +1,9 @@
 import { Router } from "express";
-import { listAllUsersController, usersDetailsController } from "../../controllers";
+import {
+  listAllUsersController,
+  usersDetailsController,
+  usersRepositoriesController,
+} from "../../controllers";
 
 const usersRoute = Router();
 
@@ -8,5 +12,8 @@ usersRoute.get("/", listAllUsersController);
 
 //listDetails
 usersRoute.get("/:username/details", usersDetailsController);
+
+//listRepositories
+usersRoute.get("/:username/repos", usersRepositoriesController);
 
 export default usersRoute;
