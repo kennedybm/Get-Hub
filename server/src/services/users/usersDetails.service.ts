@@ -15,7 +15,9 @@ export const usersDetailsService = async (userName: string) => {
     });
 
     return retrievedData.data;
-  } catch (error: unknown) {
-    throw new AppError(404, "Resource not found");
+  } catch (error: any) {
+    if (error.response) {
+      throw new AppError(parseInt(error.status), `${error.message}`);
+    }
   }
 };

@@ -21,7 +21,9 @@ export const listAllUsersService = async (userId: string) => {
     };
 
     return response;
-  } catch (error: unknown) {
-    throw new AppError(304, "Not modified");
+  } catch (error: any) {
+    if (error.response) {
+      throw new AppError(parseInt(error.status), `${error.message}`);
+    }
   }
 };
