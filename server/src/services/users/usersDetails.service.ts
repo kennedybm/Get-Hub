@@ -14,7 +14,14 @@ export const usersDetailsService = async (userName: string) => {
       },
     });
 
-    return retrievedData.data;
+    let response: Object = {
+      id: retrievedData.data.id,
+      login: retrievedData.data.login,
+      url: retrievedData.data.html_url,
+      createdAt: retrievedData.data.created_at,
+    };
+
+    return response;
   } catch (error: any) {
     if (error.response) {
       throw new AppError(parseInt(error.status), `${error.message}`);
