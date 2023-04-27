@@ -6,5 +6,5 @@ export const listAllUsersController = async (req: Request, res: Response) => {
 
   const users = await listAllUsersService(userId);
 
-  return res.status(200).json({ message: "done" });
+  return res.status(200).json(users);
 };
