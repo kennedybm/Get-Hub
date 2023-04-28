@@ -31,20 +31,24 @@ After creating the access token, save it to be used in the next steps on the pro
 ```clipboard
 git@github.com:kennedybm/test-shaw-and-partners.git
 ```
-2 - Navigate to the **`server`** folder and create a new **`.env`** file in the **`server`** root. You should see an **`.env.example`** file in the same directory. Copy and paste the contents of **`.env.example`** into **`.env`**, and replace the value of the ACCESS_TOKEN variable with the personal access token you recently created in the previous steps.
+2 - To install the project dependencies, open a terminal for both the server and client, and run this command in each:
+```clipboard
+yarn install
+```
+3 - Navigate to the **`server`** folder and create a new **`.env`** file in the **`server`** root. You should see an **`.env.example`** file in the same directory. Copy and paste the contents of **`.env.example`** into **`.env`**, and replace the value of the ACCESS_TOKEN variable with the personal access token you recently created in the previous steps.
 Your **`.env`** should look like this:
 
 ![shaw-and-partners-env](https://user-images.githubusercontent.com/91641613/235084525-590e4995-e202-4187-ae62-bd8b534bd907.png)
 
 
 
-3 - Open the project terminal and run:
+4 - Open the project terminal and run:
 
 ```clipboard
 docker compose up
 ```
 
-4 - After completing all the necessary setup, you should now be able to access the API at:
+5 - After completing all the necessary setup, you should now be able to access the API at:
 ```clipboard
 http://localhost:5500/api/users
 ```
