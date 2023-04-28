@@ -29,8 +29,7 @@ export const ApiProvider = ({ children }: IDefaultProviderProps) => {
         },
       })
       .then((res) => {
-        // setUsersData(res.data)
-        console.log(res.data);
+        setUsersData(res.data.data);
       })
       .catch((err) => {
         const currentError = err as AxiosError<IDefaultErrorResponse>;
@@ -42,7 +41,7 @@ export const ApiProvider = ({ children }: IDefaultProviderProps) => {
     await usersURL
       .get(`/${userName}/details`)
       .then((res) => {
-        console.log(res.data);
+        setUserDetails(res.data);
       })
       .catch((err) => {
         const currentError = err as AxiosError<IDefaultErrorResponse>;
@@ -54,7 +53,7 @@ export const ApiProvider = ({ children }: IDefaultProviderProps) => {
     await usersURL
       .get(`/${userName}/repos`)
       .then((res) => {
-        console.log(res.data);
+        setUserRepositories(res.data);
       })
       .catch((err) => {
         const currentError = err as AxiosError<IDefaultErrorResponse>;
