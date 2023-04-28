@@ -14,12 +14,16 @@ export const usersDetailsService = async (userName: string) => {
       },
     });
 
-    let response: Object = {
+    let response: Array<unknown> = [];
+
+    let responseObj: Object = {
       id: retrievedData.data.id,
       login: retrievedData.data.login,
       url: retrievedData.data.html_url,
       createdAt: retrievedData.data.created_at,
     };
+
+    response.push(responseObj);
 
     return response;
   } catch (error: any) {
