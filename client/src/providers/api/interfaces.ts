@@ -33,7 +33,7 @@ interface IUsersDetails {
   login: string;
   id: number;
   url: string;
-  created_at: string;
+  createdAt: string;
 }
 
 interface IUserRepositories {
